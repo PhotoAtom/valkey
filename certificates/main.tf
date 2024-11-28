@@ -12,7 +12,12 @@ resource "kubernetes_manifest" "valkey_ca" {
       }
     }
     "spec" = {
-      "isCA"       = true
+      "isCA" = true
+      "subject" = {
+        "organizations"       = ["photoatom"]
+        "countries"           = ["India"]
+        "organizationalUnits" = ["Valkey"]
+      }
       "commonName" = "valkey-ca"
       "secretName" = "valkey-ca-tls"
       "duration"   = "70128h"
@@ -66,6 +71,12 @@ resource "kubernetes_manifest" "valkey_certificate" {
       }
     }
     "spec" = {
+      "subject" = {
+        "organizations"       = ["photoatom"]
+        "countries"           = ["India"]
+        "organizationalUnits" = ["Valkey"]
+      }
+      "commonName" = "valkey"
       "dnsNames" = [
         "*.valkey.valkey.svc.cluster.local",
         "valkey-primary.valkey.svc.cluster.local",
