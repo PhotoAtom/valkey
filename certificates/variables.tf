@@ -4,7 +4,7 @@ variable "namespace" {
 }
 
 variable "cluster_issuer_name" {
-  default     = "photoatom-issuer"
+  default     = "photoatom-self-signed-issuer"
   description = "Name for the Cluster Issuer"
 }
 
