@@ -1,8 +1,8 @@
 terraform {
   required_providers {
     kubernetes = {
-      source  = "opentofu/kubernetes"
-      version = "2.32.0"
+      source  = "hashicorp/kubernetes"
+      version = "2.35.0"
     }
   }
 

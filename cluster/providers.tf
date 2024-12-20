@@ -1,12 +1,12 @@
 terraform {
   required_providers {
     helm = {
-      source  = "opentofu/helm"
-      version = "2.15.0"
+      source  = "hashicorp/helm"
+      version = "2.16.1"
     }
     random = {
-      source  = "opentofu/random"
-      version = "3.6.2"
+      source  = "hashicorp/random"
+      version = "3.6.3"
     }
   }
 
