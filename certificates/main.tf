@@ -88,6 +88,12 @@ resource "kubernetes_manifest" "valkey_certificate" {
         "valkey",
       ]
       "secretName" = "valkey-tls"
+      "secretTemplate" = {
+        "annotations" = {
+          "replicator.v1.mittwald.de/replication-allowed"            = "true"
+          "replicator.v1.mittwald.de/replication-allowed-namespaces" = "backend,frontend"
+        }
+      }
       "issuerRef" = {
         "name" = "${var.valkey_issuer_name}"
       }
